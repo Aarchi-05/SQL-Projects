@@ -39,7 +39,7 @@ The project demonstrates practical **SQL Server, analytical SQL, window function
 
 The database is built in **SQL Server** using a relational schema containing 7 interconnected tables.
 
-![Database Schema](docs/schema.png)
+![Database Schema](schema.png)
 
 ### Core Tables
 
@@ -175,7 +175,7 @@ Analyzed:
 
 Detailed analytical findings are documented separately.
 
-👉 **[View Key Findings](insights/key_findings.md)**
+👉 **[View Key Findings](Insights/key_findings.md)**
 
 ---
 
@@ -183,7 +183,7 @@ Detailed analytical findings are documented separately.
 
 Actionable recommendations based on the analytical results are documented separately.
 
-👉 **[View Business Recommendations](insights/business_recommendations.md)**
+👉 **[View Business Recommendations](Insights/business_recommendations.md)**
 
 ---
 
