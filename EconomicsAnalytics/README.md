@@ -210,8 +210,6 @@ ecommerce-customer-intelligence/
 │   └── business_recommendations.md
 │
 ├── schema.png
-│
-├── .gitignore
 └── README.md
 ```
 # ▶️ How to Run
@@ -219,7 +217,7 @@ ecommerce-customer-intelligence/
 ## 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone [YOUR_GITHUB_REPOSITORY_URL](https://github.com/Aarchi-05/SQL-Projects.git)
 cd EconomicAnalytics
 ```
 
