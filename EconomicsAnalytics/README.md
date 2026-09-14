@@ -217,7 +217,7 @@ ecommerce-customer-intelligence/
 ## 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/Aarchi-05/SQL-Projects.git]
+git clone https://github.com/Aarchi-05/SQL-Projects.git
 cd EconomicAnalytics
 ```
 
