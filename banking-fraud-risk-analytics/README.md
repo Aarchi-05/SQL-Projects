@@ -1,4 +1,4 @@
-# Banking Fraud Risk Analytics
+# 🏦Banking Fraud Risk Analytics
 
 An end-to-end **SQL Server fraud analytics project** that transforms banking transaction data into behavioral anomaly signals, explainable risk scores, and operational monitoring views.
 
@@ -6,7 +6,7 @@ The project focuses on **evidence-based feature selection, explainability, and l
 
 ---
 
-## What This Project Does
+## 🔎What This Project Does
 
 The pipeline moves from raw transaction data to an explainable risk-monitoring system:
 
@@ -30,9 +30,9 @@ The final system can identify transactions that deviate from a customer's normal
 
 ---
 
-## Core Approach
+## 🧠Core Approach
 
-### 1. Fraud Exploration
+### 1️⃣ Fraud Exploration
 
 The project first analyzes historical transaction behavior across dimensions such as:
 
@@ -45,15 +45,15 @@ The project first analyzes historical transaction behavior across dimensions suc
 
 These analyses are used to determine which attributes provide meaningful separation before they are considered for scoring.
 
-### 2. Behavioral Anomaly Detection
+### 2️⃣ Behavioral Anomaly Detection
 
 Three customer-specific behavioral signals are engineered:
 
-* **Amount anomaly** — unusually large transaction relative to customer history
-* **Velocity anomaly** — transactions occurring within a short time window
-* **Unusual hour** — transaction occurring at an uncommon hour for that customer
+* **💰Amount anomaly** — unusually large transaction relative to customer history
+* **⚡Velocity anomaly** — transactions occurring within a short time window
+* **🕐Unusual hour** — transaction occurring at an uncommon hour for that customer
 
-### 3. Explainable Risk Scoring
+### 3️⃣ Explainable Risk Scoring
 
 Validated signals are combined into a simple rule-based score.
 
@@ -76,7 +76,7 @@ The raw score is normalized to a **0–100 RiskScore** and mapped to:
 60–100  → Critical Risk
 ```
 
-### 4. Operational Monitoring
+### 4️⃣ Operational Monitoring
 
 The scoring layer feeds SQL views for:
 
@@ -104,7 +104,7 @@ This keeps the final model **small, interpretable, and evidence-driven**.
 
 ---
 
-## Data Leakage Prevention
+## 🔐 Data Leakage Prevention
 
 `FraudLabel` represents the observed fraud outcome.
 
@@ -121,7 +121,7 @@ This ensures that the model is evaluated against an outcome it did not directly 
 
 ---
 
-## SQL Architecture
+## 🗂️ SQL Architecture
 
 The project is organized into five analytical stages:
 
@@ -135,7 +135,7 @@ The project is organized into five analytical stages:
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 banking-fraud-risk-analytics/
@@ -165,9 +165,9 @@ banking-fraud-risk-analytics/
 
 ---
 
-## Technical Highlights
+## ⚙️ Technical Highlights
 
-### SQL Server / T-SQL
+### 🗄️ SQL Server / T-SQL
 
 The project demonstrates:
 
@@ -186,7 +186,7 @@ The project demonstrates:
 * Indexing
 * Validation queries
 
-### Python
+### 🐍 Python
 
 Python is used for:
 
@@ -196,7 +196,7 @@ Python is used for:
 
 ---
 
-## Dataset
+## 📊 Dataset
 
 The generated dataset contains:
 
@@ -211,7 +211,7 @@ The data is **synthetic** and intended for portfolio and analytical demonstratio
 
 ---
 
-## Analysis & Visualizations
+## 📈 Analysis & Visualizations
 
 Detailed findings, validation results, and supporting visualizations are available in:
 
@@ -226,7 +226,7 @@ The analysis includes visualizations for:
 
 ---
 
-## How to Run
+## 🚀 How to Run
 
 ### 1. Generate Data
 
@@ -272,7 +272,7 @@ sql/fraud_monitoring.sql — Instantiates operational monitoring views
 ```
 ---
 
-## Limitations
+## ⚠️ Limitations
 
 * Synthetic dataset; results are not representative of real-world banking fraud.
 * Thresholds are dataset-specific and would require recalibration on production data.
@@ -281,6 +281,6 @@ sql/fraud_monitoring.sql — Instantiates operational monitoring views
 
 ---
 
-## Project Objective
+## 🎯 Project Objective
 
 This project demonstrates how SQL can be used to build more than a reporting dashboard — it can support an **explainable, evidence-driven fraud risk analytics workflow** from raw transaction data through anomaly detection, scoring, validation, and operational monitoring.
