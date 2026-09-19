@@ -215,7 +215,7 @@ The data is **synthetic** and intended for portfolio and analytical demonstratio
 
 Detailed findings, validation results, and supporting visualizations are available in:
 
-👉 **[Read the detailed Key Findings](insights/key_findings.md)**
+👉 **[Read the detailed Key Findings](insights/KEY_FINDING.md)**
 
 The analysis includes visualizations for:
 
