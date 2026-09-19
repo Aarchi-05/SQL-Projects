@@ -1,6 +1,6 @@
-# Key Findings
+# 🔎 Key Findings
 
-## 1. Fraud Baseline
+## 1. 📊 Fraud Baseline
 
 The dataset contains **15,000 transactions** with **583 fraudulent transactions**, giving an overall fraud rate of **3.89%**.
 
@@ -23,9 +23,9 @@ Low-volume early periods were treated cautiously because their percentage-based 
 
 ---
 
-## 2. Transaction-Level Findings
+## 2. 💳 Transaction-Level Findings
 
-### Transaction Type
+### 🔄 Transaction Type
 
 | Type       | Transactions | Fraudulent | Fraud Rate |
 | ---------- | -----------: | ---------: | ---------: |
@@ -45,7 +45,7 @@ Transaction status showed limited useful separation and was **excluded from dire
 
 ---
 
-## 3. Customer Findings
+## 3.👥 Customer Findings
 
 | Segment        | Customers | Transactions | Fraud Rate |
 | -------------- | --------: | -----------: | ---------: |
@@ -54,7 +54,7 @@ Transaction status showed limited useful separation and was **excluded from dire
 | Mass Market    |       681 |       10,175 |      3.73% |
 
 Customer segment differences are descriptive only and were **not used as direct scoring features**.
-### Fraud Rate by Customer Segment
+### 📊 Fraud Rate by Customer Segment
 
 ![Fraud Rate by Customer Segment](charts\Fraud_rate_byCustomerSegment.png)
 
@@ -62,11 +62,11 @@ Several customers showed high historical fraud rates, but small transaction coun
 
 ---
 
-# 4. Behavioral Anomaly Detection
+# 4. 🧠 Behavioral Anomaly Detection
 
 Three customer-specific behavioral signals were retained.
 
-### Amount Anomaly
+### 💰 Amount Anomaly
 
 ```text
 Amount >= Customer Average + 2 × Customer Standard Deviation
@@ -74,7 +74,7 @@ Amount >= Customer Average + 2 × Customer Standard Deviation
 
 This avoids applying the same amount threshold to customers with very different spending patterns.
 
-### Velocity Anomaly
+### ⚡ Velocity Anomaly
 
 ```text
 Previous transaction within <= 300 seconds
@@ -82,11 +82,11 @@ Previous transaction within <= 300 seconds
 
 Only **61 transactions (~0.44%)** met this condition, making it a selective signal.
 
-### Unusual Hour
+### 🕐 Unusual Hour
 
 A transaction is unusual when the customer has at least 10 transactions and the transaction hour represents **<5%** of their historical activity.
 
-### Anomaly Validation
+### 📈 Anomaly Validation
 
 | Score | Transactions | Fraud Rate |
 | ----: | -----------: | ---------: |
@@ -98,7 +98,7 @@ A transaction is unusual when the customer has at least 10 transactions and the 
 Fraud rate increased as anomaly signals accumulated. The Score 2 result is based on only 9 transactions and should therefore be interpreted cautiously.
 
 ---
-### Fraud Rate by Anomaly Score
+### 📊 Fraud Rate by Anomaly Score
 
 ![Fraud Rate by Anomaly Score](charts\Fraud rate by anomaly score.png)
 
@@ -106,7 +106,7 @@ Fraud rate increases from 3.75% for transactions with no detected anomalies
 to 5.92% with one anomaly and 11.11% with two anomalies. The score-2 group
 contains only 9 transactions, so the result should be interpreted cautiously.
 
-# 5. Feature Selection
+# 5. 🧪 Feature Selection
 
 Several additional attributes were tested but excluded from direct scoring:
 
@@ -124,7 +124,7 @@ The objective was **evidence-based feature selection**, not maximizing the numbe
 
 ---
 
-# 6. Explainable Risk Scoring
+# 6.🎯 Explainable Risk Scoring
 
 The final score combines behavioral anomalies with two contextual signals.
 
@@ -154,7 +154,7 @@ The **60-point Critical threshold** is intentionally used to isolate the highest
 
 ---
 
-# 7. Risk Validation
+# 7. 🚨 Risk Validation
 
 | Risk Level | Transactions | Fraud Rate |
 | ---------- | -----------: | ---------: |
@@ -192,7 +192,7 @@ This supports combining behavioral anomalies with transaction-type context.
 
 ---
 
-## Risk Distribution
+## 📊 Risk Distribution
 
 ```mermaid
 xychart-beta
@@ -202,7 +202,7 @@ xychart-beta
     bar [11164, 3291, 525, 20]
 ```
 
-## Fraud Rate by Anomaly Score
+## 📈 Fraud Rate by Anomaly Score
 
 ```mermaid
 xychart-beta
@@ -214,7 +214,7 @@ xychart-beta
 
 ---
 
-# 8. Operational Monitoring
+# 8. 🚦 Operational Monitoring
 
 The project provides four monitoring layers:
 
@@ -228,7 +228,7 @@ Merchant Historical Monitoring
 High-Fraud Merchant Watchlist
 ```
 
-### Transaction Monitoring
+### 🔍 Transaction Monitoring
 
 `vw_HighRiskTransactions` provides:
 
@@ -237,7 +237,7 @@ High-Fraud Merchant Watchlist
 * Transaction/account context
 * Explainable monitoring reason
 
-### Daily Monitoring
+### 📅 Daily Monitoring
 
 `vw_DailyFraudRiskMonitoring` tracks daily:
 
@@ -247,7 +247,7 @@ High-Fraud Merchant Watchlist
 * Actual fraud transactions
 * Actual fraud rate
 
-### Merchant Monitoring
+### 🏪 Merchant Monitoring
 
 `vw_MerchantFraudMonitoring` provides historical merchant-level fraud metrics.
 
@@ -265,7 +265,7 @@ Merchant `FraudLabel` values are used only for retrospective monitoring and vali
 
 ---
 
-# 9. Data Leakage Prevention
+# 9. 🔐 Data Leakage Prevention
 
 `FraudLabel` is the observed outcome and is **never used to calculate**:
 
@@ -281,7 +281,7 @@ This keeps the scoring framework independent from the target variable used to ev
 
 ---
 
-# 10. Key Takeaways
+# 10. 🎯 Key Takeaways
 
 1. **Fraud rate:** 3.89% across 15,000 transactions.
 2. **Transaction type:** Deposit and Transfer showed the strongest contextual separation.
